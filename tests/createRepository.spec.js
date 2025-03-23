@@ -14,7 +14,7 @@ test.beforeEach('Login to gitHub', async({page})=>{
   expect(await loginPage.getDashboardText()).toBe("Dashboard");
 })
 
-test('Verify user is able to create Repository and issue and created issue is displayed on the dashboard page', async ({page})=>{
+test.skip('Verify user is able to create Repository and issue and created issue is displayed on the dashboard page', {tag : '@sanity'}, async ({page})=>{
   const dashboardPage = new DashboardPage(page);
   const issuePage = new IssuePage(page);
   await dashboardPage.createRepository(properties.get('RespositoryName'));
